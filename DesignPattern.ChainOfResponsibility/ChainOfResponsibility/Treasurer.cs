@@ -23,7 +23,13 @@ namespace DesignPattern.ChainOfResponsibility.ChainOfResponsibility
             {
                 CustomerProcess customerProcess = new CustomerProcess();
                 customerProcess.Amount = req.Amount.ToString();
+                customerProcess.Name = req.Name;
+                customerProcess.EmployeeName = "Veznedar - Ayşe";
+                customerProcess.Description = "Para Çekme tutarı veznedarın günlük ödeyebileceği tutarı" +
+                    "aştığı için işlem Şube Müdür Yardımcısına yönlendirildi.";
 
+                context.CustomerProcesses.Add(customerProcess);
+                context.SaveChanges();
 
             }
         }
