@@ -31,6 +31,8 @@ namespace DesignPattern.ChainOfResponsibility.ChainOfResponsibility
                 context.CustomerProcesses.Add(customerProcess);
                 context.SaveChanges();
 
+                NextApprover.ProcessRequest(req); // bu değerleri sonraki onaylayıcıya gönder.
+
             }
         }
     }
