@@ -19,7 +19,7 @@ namespace DesignPattern.ChainOfResponsibility.ChainOfResponsibility
                 context.CustomerProcesses.Add(customerProcess);
                 context.SaveChanges();
             }
-            else
+            else if (NextApprover != null)
             {
                 CustomerProcess customerProcess = new CustomerProcess();
                 customerProcess.Amount = req.Amount.ToString();
@@ -32,6 +32,7 @@ namespace DesignPattern.ChainOfResponsibility.ChainOfResponsibility
                 context.SaveChanges();
 
                 NextApprover.ProcessRequest(req); // bu değerleri sonraki onaylayıcıya gönder.
+                //Benim bu talebimi şube müdür yardımcısı karşılayabilir.
 
             }
         }
